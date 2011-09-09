@@ -12,5 +12,10 @@ class UsersController < ApplicationController
     user = find_by_email(email)
     user && user.has_pasword?(submitted_password) ? user : nil
   end
+  
+  def new
+    @user  = User.new
+    @title = "Sign up"
+  end
 
 end
