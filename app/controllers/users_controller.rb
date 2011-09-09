@@ -9,8 +9,15 @@ class UsersController < ApplicationController
     @title = 'Sign up'
   end
   
-  def self.authenticate(email, submitted_password)
-    user = find_by_email(email)
-    user && user.has_pasword?(submitted_password) ? user : nil
+  def create
+    @user = User.new( params[:user] )
+    
+    if @user.save
+      # Handle a successful save.
+    else
+      @title = 'Sign up'
+
+      render 'new'
+    end
   end
 end
