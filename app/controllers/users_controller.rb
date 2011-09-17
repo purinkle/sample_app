@@ -13,7 +13,7 @@ class UsersController < ApplicationController
     @user = User.new( params[:user] )
     
     if @user.save
-      # Handle a successful save.
+      redirect_to @user
     else
       @title = 'Sign up'
 
