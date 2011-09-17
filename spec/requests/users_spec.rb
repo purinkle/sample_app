@@ -16,7 +16,7 @@ describe "Users" do
         
           response.should render_template("users/new")
           response.should have_selector("div#error_explanation")
-        end
+        end.should_not change(User, :count)
       end
     end
   end
