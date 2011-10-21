@@ -240,7 +240,7 @@ form.new_micropost {
     margin-bottom: 2em;
 }
 
-font.new_micropost textarea {
+form.new_micropost textarea {
     height: 4em;
     margin-bottom: 0;
 }
