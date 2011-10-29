@@ -15,4 +15,8 @@ class Micropost < ActiveRecord::Base
   validates :content, :presence => true, :length => { :maximum => 140 }
   validates :user_id, :presence => true
   default_scope :order => "microposts.created_at DESC"
+
+  def self.from_users_followed_by(user)
+    where( user_id: user.following.push(user) )
+  end
 end
